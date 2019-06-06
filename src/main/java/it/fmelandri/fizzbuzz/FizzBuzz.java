@@ -2,7 +2,6 @@ package it.fmelandri.fizzbuzz;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class FizzBuzz {
     Map<Integer, String> matches = new HashMap<>();
@@ -23,8 +22,6 @@ public class FizzBuzz {
                 .stream()
                 .filter(key -> isDivisibleBy(number, key))
                 .map(key -> matches.get(key))
-                .map(Optional::of)
-                .map(s -> s.orElse(""))
                 .reduce(String::concat)
                 .orElse(String.valueOf(number));
     }
