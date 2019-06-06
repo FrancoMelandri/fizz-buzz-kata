@@ -8,6 +8,17 @@ Given an integer number as input
 - Print **fizzbuzz** if the number is divisible  by 3 and 5
 
 Example (up to 15)
-> 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz, 
+> 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz,
+
+
+
+#References
+
+http://codekata.com/
+http://codingdojo.org/KataCatalogue/
+
+https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+
+ 
 
 
