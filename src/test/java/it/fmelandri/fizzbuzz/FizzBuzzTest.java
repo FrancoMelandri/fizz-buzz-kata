@@ -23,4 +23,9 @@ public class FizzBuzzTest {
     public void shouldShowNumberTwo() {
         assertThat(sut.emit(2)).isEqualTo("2");
     }
+
+    @Test
+    public void shouldShowNumberThreeAsFizz() {
+        assertThat(sut.emit(3)).isEqualTo("fizz");
+    }
 }
