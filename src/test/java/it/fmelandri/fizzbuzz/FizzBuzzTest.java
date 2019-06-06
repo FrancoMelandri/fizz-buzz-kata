@@ -14,7 +14,8 @@ public class FizzBuzzTest {
         sut = FizzBuzz
                 .create()
                     .with(3, "fizz")
-                    .with(5, "buzz");
+                    .with(5, "buzz")
+                    .with(7, "razz");
     }
 
     @Test
@@ -40,5 +41,10 @@ public class FizzBuzzTest {
     @Test
     public void shouldShowNumberFiveBuzz() {
         assertThat(sut.emit(3*5)).isEqualTo("fizzbuzz");
+    }
+
+    @Test
+    public void shouldShowNumberFizzBuzzRazz() {
+        assertThat(sut.emit(3*5*7)).isEqualTo("fizzbuzzrazz");
     }
 }
