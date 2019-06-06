@@ -2,6 +2,7 @@ package it.fmelandri.fizzbuzz;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class FizzBuzz {
     Map<Integer, String> matches = new HashMap<>();
@@ -13,14 +14,14 @@ public class FizzBuzz {
 
 
     public String emit(int number) {
-        String result = "";
-        for (Integer key: matches.keySet()) {
-            if (number % key == 0)
-                result += matches.get(key);
-        }
-        if (result.isEmpty())
-            return String.valueOf(number);
-        return result;
+        return matches
+                .keySet()
+                .stream()
+                .filter(key -> number % key == 0)
+                .map(key -> Optional.ofNullable(matches.get(key)))
+                .reduce(Optional.ofNullable(null),
+                        (acc, item) -> Optional.ofNullable(acc.orElse("") + item.orElse("")))
+                .orElse(String.valueOf(number));
     }
 
     public FizzBuzz with(int number, String value) {
