@@ -11,7 +11,10 @@ public class FizzBuzzTest {
 
     @Before
     public void SetUp() {
-        sut = new FizzBuzz();
+        sut = FizzBuzz
+                .create()
+                    .with(3, "fizz")
+                    .with(5, "buzz");
     }
 
     @Test
