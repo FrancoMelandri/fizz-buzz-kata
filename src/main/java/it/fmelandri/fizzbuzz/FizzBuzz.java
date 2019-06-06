@@ -12,20 +12,31 @@ public class FizzBuzz {
         return new FizzBuzz();
     }
 
+    public FizzBuzz with(int number, String value) {
+        matches.put(number, value);
+        return this;
+    }
 
     public String emit(int number) {
         return matches
                 .keySet()
                 .stream()
-                .filter(key -> number % key == 0)
-                .map(key -> Optional.ofNullable(matches.get(key)))
-                .reduce(Optional.ofNullable(null),
-                        (acc, item) -> Optional.ofNullable(acc.orElse("") + item.orElse("")))
+                .filter(key -> this.isDivisibleBy(number, key))
+                .map(this::getKeyFromMatches)
+                .map(s -> s.orElse(""))
+                .reduce(String::concat)
                 .orElse(String.valueOf(number));
+
+    }
+    
+
+    public boolean isDivisibleBy(int dividend, int divisor) {
+        return dividend % divisor == 0;
     }
 
-    public FizzBuzz with(int number, String value) {
-        matches.put(number, value);
-        return this;
+    public Optional<String> getKeyFromMatches(int key) {
+        return Optional.of(matches.get(key));
     }
+
 }
+
