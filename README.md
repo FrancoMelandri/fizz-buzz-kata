@@ -14,10 +14,16 @@ Example (up to 15)
 
 #References
 
+kata:
 http://codekata.com/
 http://codingdojo.org/KataCatalogue/
 
+clean code:
 https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882
+
+commit:
+http://whatthecommit.com/
+
 
  
 
