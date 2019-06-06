@@ -28,4 +28,9 @@ public class FizzBuzzTest {
     public void shouldShowNumberThreeAsFizz() {
         assertThat(sut.emit(3)).isEqualTo("fizz");
     }
+
+    @Test
+    public void shouldShowNumberFiveAsBuzz() {
+        assertThat(sut.emit(5)).isEqualTo("buzz");
+    }
 }
