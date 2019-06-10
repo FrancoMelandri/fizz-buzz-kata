@@ -47,4 +47,15 @@ public class FizzBuzzTest {
     public void shouldShowNumberFizzBuzzRazz() {
         assertThat(sut.emit(3*5*7)).isEqualTo("fizzbuzzrazz");
     }
+
+    @Test
+    public void shouldPreserveOrderOfInsertion() {
+        FizzBuzz scrambledSut = FizzBuzz
+                .create()
+                    .with(7, "First")
+                    .with(10, "Second")
+                    .with(4, "Third");
+
+        assertThat(scrambledSut.emit(7 * 10 * 4)).isEqualTo("FirstSecondThird");
+    }
 }
